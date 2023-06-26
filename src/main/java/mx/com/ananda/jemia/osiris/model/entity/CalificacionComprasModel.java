@@ -15,11 +15,8 @@ public class CalificacionComprasModel {
     @Column(name = "id_calificacion_compras")
     private Long idCalificacionCompras;
 
-    private int calif1;
-    private int calif2;
-    private int calif3;
-    private int calif4;
-    private int calif5;
+    private double servicioCalif;
+    private double tiemposCalif;
     private double totalCalif;
 
     @OneToOne

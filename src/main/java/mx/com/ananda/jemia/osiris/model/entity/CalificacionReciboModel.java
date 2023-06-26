@@ -13,11 +13,13 @@ public class CalificacionReciboModel {
     @Column(name = "id_calificacion_recibo")
     private Long idCalificacionRecibo;
 
-    private int calif1;
-    private int calif2;
-    private int calif3;
-    private int calif4;
-    private int calif5;
+    private double documentoCalif;
+    private boolean documentoCalifB;
+    private boolean documentoFacturaB;
+    private double documentoFacturaCalif;
+    private boolean cantidadCalifB;
+    private double cantidadCalif;
+
     private double totalCalif;
 
     @OneToOne
