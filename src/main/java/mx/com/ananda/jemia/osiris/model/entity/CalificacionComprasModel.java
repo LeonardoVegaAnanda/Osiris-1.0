@@ -20,5 +20,5 @@ public class CalificacionComprasModel {
     private double totalCalif;
 
     @OneToOne
-    private OrdenCompraModel ordenCompra;
+    private EventoModel evento;
 }

@@ -4,6 +4,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.List;
 
 @Data
 @Table(name = "orden_compra")
@@ -31,15 +32,10 @@ public class OrdenCompraModel {
     @Column(name = "nombre_proveedor")
     private String cardName;
 
-    @OneToOne(mappedBy = "ordenCompra")
-    private CalificacionCalidadModel cCalidad;
-
-    @OneToOne(mappedBy = "ordenCompra")
-    private CalificacionComprasModel cCompras;
-
-    @OneToOne(mappedBy = "ordenCompra")
-    private CalificacionReciboModel cRecibo;
 
     @ManyToOne(cascade = CascadeType.ALL)
     private ProveedorModel proveedor;
+
+    @OneToMany(mappedBy = "orden")
+    private List<EventoModel> eventos;
 }
