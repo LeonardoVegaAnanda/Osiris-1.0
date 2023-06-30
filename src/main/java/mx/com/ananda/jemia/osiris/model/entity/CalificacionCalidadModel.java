@@ -14,9 +14,16 @@ public class CalificacionCalidadModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idCalificacionCalidad;
 
+    @Column(name = "defectos_calif")
     private double defectosCalif;
+
+    @Column(name = "condiciones_calif")
     private double condicionesEntregaCalif;
+
+    @Column(name = "verificado_condiciones")
     private double condicionesEntregaB;
+
+    @Column(name = "total_calif")
     private double totalCalif;
 
     @OneToOne

@@ -14,6 +14,7 @@ public class EventoModel {
     @Column(name = "id_evento")
     private Long idEvento;
 
+    @Column(name = "num_evento")
     private int numEvento;
 
     @OneToOne(mappedBy = "evento")

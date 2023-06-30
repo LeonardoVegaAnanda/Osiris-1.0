@@ -32,7 +32,6 @@ public class OrdenCompraModel {
     @Column(name = "nombre_proveedor")
     private String cardName;
 
-
     @ManyToOne(cascade = CascadeType.ALL)
     private ProveedorModel proveedor;
 
