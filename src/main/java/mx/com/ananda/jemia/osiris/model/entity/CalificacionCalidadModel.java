@@ -1,5 +1,6 @@
 package mx.com.ananda.jemia.osiris.model.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -21,11 +22,12 @@ public class CalificacionCalidadModel {
     private double condicionesEntregaCalif;
 
     @Column(name = "verificado_condiciones")
-    private double condicionesEntregaB;
+    private boolean condicionesEntregaB;
 
     @Column(name = "total_calif")
     private double totalCalif;
 
+    @JsonIgnore
     @OneToOne
     private EventoModel evento;
 }

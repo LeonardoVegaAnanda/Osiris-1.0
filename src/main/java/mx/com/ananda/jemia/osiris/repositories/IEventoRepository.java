@@ -6,5 +6,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 public interface IEventoRepository extends JpaRepository<EventoModel, Long> {
+    List<EventoModel> findByOrden_DocNum(Long docNum);
     List<EventoModel> findByOrden_IdOrdenCompra(Long idOrdenCompra);
 }

@@ -9,6 +9,8 @@ import java.util.Optional;
 
 @Repository
 public interface IOrdenCompraRepository extends JpaRepository<OrdenCompraModel,Long> {
+    Optional<OrdenCompraModel> findByNotaEvento(String notaEvento);
+    List<OrdenCompraModel> findByProveedor_CodigoProveedor(String codigoProveedor);
     Optional<OrdenCompraModel> findByDocNum(Long docNum);
     List<OrdenCompraModel> findByProveedor_IdProveedor(Long idProveedor);
 }

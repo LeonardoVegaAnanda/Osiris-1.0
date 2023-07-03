@@ -20,8 +20,8 @@ public class CalificacionReciboController {
     }
 
     @PostMapping
-    public ResponseEntity<?> guardarCalificacionRecibo(@RequestBody CalificacionReciboModel recibo){
-        return new ResponseEntity<>(sRecibo.saveCalif(recibo),HttpStatus.CREATED);
+    public ResponseEntity<?> guardarCalificacionRecibo(@RequestBody CalificacionReciboModel recibo,@RequestParam long id){
+        return new ResponseEntity<>(sRecibo.saveCalif(recibo,id),HttpStatus.CREATED);
     }
 
     @PutMapping

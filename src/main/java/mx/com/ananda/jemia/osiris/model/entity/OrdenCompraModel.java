@@ -1,5 +1,6 @@
 package mx.com.ananda.jemia.osiris.model.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -12,6 +13,8 @@ import java.util.List;
 public class OrdenCompraModel {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_orden_compra")
     private Long idOrdenCompra;
 
     @Column(name = "numero_orden")
@@ -19,9 +22,6 @@ public class OrdenCompraModel {
 
     @Column(name = "fecha_documento")
     private String docDate;
-
-    @Column(name = "fecha_ingreso")
-    private LocalDate fechaIngreso;
 
     @Column(name = "total_orden")
     private Double docTotal;
@@ -32,9 +32,17 @@ public class OrdenCompraModel {
     @Column(name = "nombre_proveedor")
     private String cardName;
 
+    @Column(name = "nota_evento")
+    private String notaEvento;
+
+    @Column(name = "calificacion_orden")
+    private double calificacionOrden;
+
+    @JsonIgnore
     @ManyToOne(cascade = CascadeType.ALL)
     private ProveedorModel proveedor;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "orden")
     private List<EventoModel> eventos;
 }

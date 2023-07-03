@@ -17,7 +17,9 @@ public interface IEventoService {
 
     void updateEvento(EventoModel evento);
 
-    EventoModel saveEvento(EventoModel evento);
+    EventoModel saveEventoDocNum(Long docNum);
+
+    EventoModel saveEventoCardCode(String cardCode, String notaEvento);
 
     Optional<CalificacionReciboModel> findByEventoRecibo(Long idEvento);
 

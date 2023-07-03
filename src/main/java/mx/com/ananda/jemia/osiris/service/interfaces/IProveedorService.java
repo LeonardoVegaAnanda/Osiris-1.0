@@ -12,7 +12,7 @@ public interface IProveedorService {
     Optional<ProveedorModel> findProveedorById(Long idProveedor);
     Optional<ProveedorModel> findProveedorByCardCode(String cardCode);
     ProveedorModel saveProveedor(ProveedorModel proveedor);
-
     List<OrdenCompraModel> findOrdenesByProveedor(Long idProveedor);
+    void asignarCalificacionProveedor(Long idProveedor);
 
 }

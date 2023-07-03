@@ -40,9 +40,14 @@ public class EventoController {
     public ResponseEntity<?> traerCalifRecivoEvento(@PathVariable Long id){
         return new ResponseEntity<>(sEvento.findByEventoRecibo(id),HttpStatus.OK);
     }
-    @PostMapping
-    public ResponseEntity<?> guardarEvento(@RequestBody EventoModel evento){
-        return new ResponseEntity<>(sEvento.saveEvento(evento),HttpStatus.CREATED);
+    @PostMapping("/docNum")
+    public ResponseEntity<?> guardarEventoDocNum(@RequestParam Long docNum){
+        return new ResponseEntity<>(sEvento.saveEventoDocNum(docNum),HttpStatus.CREATED);
+    }
+
+    @PostMapping("/cardCode")
+    public ResponseEntity<?> guardarEventoCardCode(@RequestParam(value = "nota",defaultValue = "0") String nota, @RequestParam String cardCode){
+        return new ResponseEntity<>(sEvento.saveEventoCardCode(cardCode,nota),HttpStatus.CREATED);
     }
 
     @PutMapping

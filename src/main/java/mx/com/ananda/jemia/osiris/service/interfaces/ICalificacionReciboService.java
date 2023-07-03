@@ -9,7 +9,7 @@ public interface ICalificacionReciboService {
 
     Optional<CalificacionReciboModel> findByIdCalif(Long idCalif);
 
-    CalificacionReciboModel saveCalif(CalificacionReciboModel calificacionRecibo);
+    CalificacionReciboModel saveCalif(CalificacionReciboModel calificacionRecibo, long idEvento);
 
     void updateCalif(CalificacionReciboModel calificacionRecibo);
 

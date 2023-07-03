@@ -10,7 +10,7 @@ public interface ICalificacionCalidadService {
 
     Optional<CalificacionCalidadModel> findByIdCalif(Long idCalifCa);
 
-    CalificacionCalidadModel saveCalif(CalificacionCalidadModel calificacionCalidad);
+    CalificacionCalidadModel saveCalif(CalificacionCalidadModel calificacionCalidad, Long idEvento);
 
     void updateCalif(CalificacionCalidadModel calificacionCalidad);
 

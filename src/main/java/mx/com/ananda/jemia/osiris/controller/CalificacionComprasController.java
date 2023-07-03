@@ -20,8 +20,8 @@ public class CalificacionComprasController {
     }
 
     @PostMapping
-    public ResponseEntity<?> guardarCalificacionCompras(@RequestBody CalificacionComprasModel compras){
-        return new ResponseEntity<>(sCompras.saveCalif(compras),HttpStatus.CREATED);
+    public ResponseEntity<?> guardarCalificacionCompras(@RequestBody CalificacionComprasModel compras, @RequestParam Long id){
+        return new ResponseEntity<>(sCompras.saveCalif(compras,id),HttpStatus.CREATED);
     }
 
     @PutMapping

@@ -4,11 +4,11 @@ import mx.com.ananda.jemia.osiris.service.interfaces.IOrdenCompraService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
+import java.util.Optional;
+
+@RestController
 @RequestMapping("/ananda/osiris/ordenes")
 public class OrdenCompraController {
 
@@ -33,5 +33,11 @@ public class OrdenCompraController {
     @GetMapping("/eventos/{id}")
     public ResponseEntity<?> traerEventosByIdOrden(@PathVariable Long id){
         return new ResponseEntity<>(sOrden.findEventoByOrdenCompra(id),HttpStatus.OK);
+    }
+
+    @GetMapping("/asignarOrden/{id}")
+    public ResponseEntity<?> asignarOrdenSAP(@PathVariable Long id, @RequestParam String docNum){
+        Long docNumFormat = Long.parseLong(docNum);
+        return new ResponseEntity<>(sOrden.asignarOrden(id,docNumFormat),HttpStatus.OK);
     }
 }
